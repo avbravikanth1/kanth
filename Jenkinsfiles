@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+        stage("SCM Checkout") {
+            steps {
+                git branch: 'master',
+                credentialsId: "github-access",            
+                git url: 'https://github.com/avbravikanth1/my-react-app.git'
+
+                dir('second repo') {
+                    git branch: 'main',
+                    url: 'https://github.com/avbravikanth1/kanth.git'
+                }
+            }
+        }               
+        stage('Build') {
+            steps {
+                sh "npm install"
+                //sh "npm run clean"
+                sh "npm run build"
+               
+            }
+        
+        }
+    }
+}
