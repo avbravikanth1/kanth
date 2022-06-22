@@ -8,10 +8,10 @@ pipeline {
                     credentialsId: "github-access",            
                     url: 'https://github.com/avbravikanth1/my-react-app.git'
 
-                dir('second repo') {
-                    git branch: 'main',
-                        url: 'https://github.com/avbravikanth1/kanth.git'
-                }
+                // dir('second repo') {
+                //     git branch: 'main',
+                //         url: 'https://github.com/avbravikanth1/kanth.git'
+                // }
             }
         }               
         stage('Build') {
