@@ -25,7 +25,7 @@ pipeline {
         }
         stage('status of ping') {
            steps {
-             ansibleplaybook playbook "ping.yml"
+             ansiblePlaybook playbook: "ping.yml"
 
            }
         }
