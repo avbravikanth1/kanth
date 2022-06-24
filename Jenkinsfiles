@@ -26,7 +26,7 @@ pipeline {
         }
         stage('status of ping') {
            steps {
-             ansiblePlaybook playbook: "'second repo'/ping.yml"
+             ansiblePlaybook playbook: "secondRepo/ping.yml"
 
            }
         }
