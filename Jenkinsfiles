@@ -23,12 +23,12 @@ pipeline {
             }
         
         }
-        stage('status of ping')
+        stage('status of ping') {
            steps {
              ansibleplaybook playbook "ping.yml"
 
            }
-    
+        }
     }
 
 }
