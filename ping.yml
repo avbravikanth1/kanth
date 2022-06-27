@@ -1,7 +1,7 @@
 ---
  - hosts: all
    tasks:
-     - name: Copy the file from jenkins to mwiapp02
+     - name: Copy the file from jenkins to appserver
        copy: src= /var/lib/jenkins/workspace/Ravikanth/'Test Ping'  dest=/devapps/devrabbit/nodejsApps
        when: "{{ inventory_hostname == 'appserver' }}"
        
