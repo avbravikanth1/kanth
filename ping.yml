@@ -1,22 +1,11 @@
 ---
-- name: ping test application server
-  hosts: all
-  become: sudo   
-
+- hosts: appserver
   tasks:
-    # - name: Ping status
-    #   # ping:git 
+    - name: Transfer file from jenkinsServer to appserver
+      synchronize:
+        src: /var/lib/jenkins/workspace/Ravikanth/Test Ping
+        dest: /devapps/devrabbit/nodejsApps
+      delegate_to: jenkins server
 
-  hosts: jenkins
-  user:  dradmin
-  tasks:
-  - name: fetch file from jenkins 
-    fetch: /var/lib/jenkins/workspace/Ravikanth/'Test Ping' 
-
-  hosts: appserver  
-  user: dradmin
-  tasks:
-  - name: copy file from jenkins to appserver
-    copy: /var/lib/jenkins/workspace/Ravikanth/'Test Ping' dest=/devapps/devrabbit/nodejsApps
     
 ...
