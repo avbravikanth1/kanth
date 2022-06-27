@@ -1,11 +1,18 @@
 ---
-- hosts: appserver
-  tasks:
-    - name: Transfer file from jenkinsServer to appserver
-      synchronize:
-        src: /var/lib/jenkins/workspace/Ravikanth/Test Ping
-        dest: /devapps/devrabbit/nodejsApps
-      delegate_to: jenkinsserver
-
+- name: "Copy files" 
+  hosts: jnekinsserver 
+  become: yes 
+  gather_facts: false 
+  vars: 
+    source: /var/lib/jenkins/workspace/Ravikanth/'Test Ping'
+    dest: /devapps/devrabbit/nodejsApps
+  tasks: 
+    - name: "Copy file"
+      copy:
+        src: "{{source}}"
+        dest: "{{dest}}"
+        owner: dradmin
+        group: root
+        mode: 777 
     
 ...
