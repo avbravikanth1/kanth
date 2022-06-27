@@ -5,7 +5,7 @@
 
   tasks:
     # - name: Ping status
-    #   # ping:
+    #   # ping:git 
 
   hosts: jenkins
   user:  dradmin
@@ -13,7 +13,7 @@
   - name: fetch file from jenkins 
     fetch: /var/lib/jenkins/workspace/Ravikanth/'Test Ping' 
 
-  hosts: appserver
+  hosts: appserver  
   user: dradmin
   tasks:
   - name: copy file from jenkins to appserver
