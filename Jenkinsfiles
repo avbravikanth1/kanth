@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+
+    stages {
+        stage("SCM Checkout") {
+            steps {
+                git branch: 'master',
+                    credentialsId: "raviGitAccess",            
+                    url: 'https://github.com/avbravikanth1/my-react-app.git'
+
+                dir('secondRepo') {
+                    git branch: 'main',
+                    credentialsId: "raviGitAccess",
+                    url: 'https://github.com/avbravikanth1/kanth.git'
+                }
+            }
+        }               
+        stage('Build') {
+            steps {
+                sh "npm install"
+                //sh "npm run clean"
+                sh "npm run build"
+               
+            }
+        
+        }
+        stage('status of ping') {
+           steps {
+            ansiblePlaybook credentialsId: 'DEV_APP_SERVER', installation: 'ansible', inventory: 'secondRepo/inventories/dev.inv', limit: 'appserver', playbook: 'secondRepo/ping.yml'
+           }
+        }
+    }
+
+}
