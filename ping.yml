@@ -5,7 +5,7 @@
       synchronize:
         src: /var/lib/jenkins/workspace/Ravikanth/Test Ping
         dest: /devapps/devrabbit/nodejsApps
-      delegate_to: jenkins server
+      delegate_to: jenkinsserver
 
     
 ...
