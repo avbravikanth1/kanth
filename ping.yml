@@ -1,18 +1,8 @@
 ---
-- name: "Copy files" 
-  hosts: jnekinsserver 
-  become: yes 
-  gather_facts: false 
-  vars: 
-    source: /var/lib/jenkins/workspace/Ravikanth/'Test Ping'
-    dest: /devapps/devrabbit/nodejsApps
-  tasks: 
-    - name: "Copy file"
-      copy:
-        src: "{{source}}"
-        dest: "{{dest}}"
-        owner: dradmin
-        group: root
-        mode: 777 
-    
+ - hosts: all
+   tasks:
+     - name: Copy the file from jenkins to mwiapp02
+       copy: src= /var/lib/jenkins/workspace/Ravikanth/'Test Ping'  dest=/devapps/devrabbit/nodejsApps
+       when: "{{ inventory_hostname == 'appserver' }}"
+       
 ...
