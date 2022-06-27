@@ -1,23 +1,9 @@
 ---
 - name: ping test application server
   hosts: all
-  become: sudo
-
-  tasks:
-
-    - name: <<Check the IP received
-      debug:
-        msg: "Received IP: {{ 10.2.8.51 }}"
-
-    - name: <<Get custom facts
-      vmware_vm_facts:
-        hostname: "{{ 10.2.8.51 }}"
-        username: dradmin
-        password: Folsom@2022
-        validate_certs: False
-        delegate_to: localhost
-        register: custom_facts
+  become: sudo   
 
   tasks:
     - name: Ping status
       ping:
+...
