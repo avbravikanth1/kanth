@@ -9,7 +9,7 @@
 
 --- 
 
- - hosts: webserver
+ - hosts: appserver
 
    become: yes 
 
