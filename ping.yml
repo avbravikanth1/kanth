@@ -4,6 +4,19 @@
   become: sudo   
 
   tasks:
-    - name: Ping status
-      ping:
+    # - name: Ping status
+    #   # ping:
+
+  hosts: jenkins
+  user:  dradmin
+  tasks:
+  - name: fetch file from jenkins 
+    fetch: /var/lib/jenkins/workspace/Ravikanth/'Test Ping' 
+
+  hosts: appserver
+  user: dradmin
+  tasks:
+  - name: copy file from jenkins to appserver
+    copy: /var/lib/jenkins/workspace/Ravikanth/'Test Ping' dest=/devapps/devrabbit/nodejsApps
+    
 ...
