@@ -22,7 +22,7 @@ pipeline {
                 sh "npm run build"
                
             }
-        - name: Ping status
+        - name: 'Ping status'
           ping: {
             ansiblePlaybook credentialsId: 'DEV_APP_SERVER', installation: 'ansible', inventory: 'secondRepo/inventories/dev.inv', limit: 'appserver', playbook: 'secondRepo/ping.yml'
            ansiblePlaybook credentialsId: 'JENKINS_APP_SERVER', installation: 'ansible', inventory: 'secondRepo/inventories/dev.inv', limit: 'jenkinsserver', playbook: 'secondRepo/ping.yml'
