@@ -26,7 +26,7 @@ pipeline {
         }
         stage('status of ping') {
            steps {
-            ansiblePlaybook credentialsId: 'DEV_APP_SERVER', installation: 'ansible', inventory: '/inventories/dev.inv', limit: 'appserver', playbook: '/ping.yml'
+            ansiblePlaybook credentialsId: 'DEV_APP_SERVER', installation: 'ansible', inventory: 'secondRepo/inventories/dev.inv', limit: 'appserver', playbook: 'secondRepo/ping.yml'
            }
         }
     }
