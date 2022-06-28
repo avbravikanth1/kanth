@@ -7,9 +7,9 @@
    tasks: 
     stage: Hosts file
 
-      [ServerA] 10.2.8.50 ansible_user=ubuntu ansible_ssh_pass=Folsom@2022
+      [ServerA] 10.2.8.50 ansible_user=ubuntu ansible_pass=Folsom@2022
 
-      [ServerB] 10.2.8.51 ansible_user=ubuntu ansible_ssh_pass=Folsom@2022
+      [ServerB] 10.2.8.51 ansible_user=ubuntu ansible_pass=Folsom@2022
 
 - name: Transferring file from ServerA to ServerB 
 
