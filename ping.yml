@@ -4,7 +4,7 @@
    tasks:
      - name: copy of files jenkins to app server
        copy:
-        src: /var/lib/jenkins/workspace/ravi/test1
+        src: /var/lib/jenkins/workspace/ravi/test5
         dest: /devapps/devrabbit/nodejsApps/ravi
         owner: root
         group: root
