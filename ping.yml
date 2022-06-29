@@ -1,23 +1,11 @@
 ---
- 
- - hosts: appserver
-
-   become: yes 
-
-   tasks: 
-    stage: Hosts file
-
-      [ServerA] 10.2.8.50 ansible_user=ubuntu ansible_pass=Folsom@2022
-
-      [ServerB] 10.2.8.51 ansible_user=ubuntu ansible_pass=Folsom@2022
-
-- name: Transferring file from ServerA to ServerB 
-
-        synchronize: 
-
-             src: /var/lib/jenkins/workspace/Ravikanth/'Test Ping'/ 
-
-             dest: /devapps/devrabbit/nodejsApps
-             delegate_to: ServerA 
-       
-...
+-  hosts: all
+   become: yes
+   tasks:
+     - name:copy of files jenkins to app server
+       copy:
+        src:/var/lib/jenkins/workspace/ravi/test1
+        dest:/devapps/devrabbit/nodejsApps/ravi
+        owner: root
+        group: root
+        mode: '0777'

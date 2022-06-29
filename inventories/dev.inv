@@ -1,2 +1,4 @@
 [appserver]
-10.2.8.51
+10.2.8.51 anisible_user=dradmin
+[jenkinsserver]
+10.2.8.50 anisible_user=dradmin
