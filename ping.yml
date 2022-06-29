@@ -2,10 +2,10 @@
 -  hosts: all
    become: yes
    tasks:
-     - name:copy of files jenkins to app server
+     - name: copy of files jenkins to app server
        copy:
-        src:/var/lib/jenkins/workspace/ravi/test1
-        dest:/devapps/devrabbit/nodejsApps/ravi
+        src: /var/lib/jenkins/workspace/ravi/test1
+        dest: /devapps/devrabbit/nodejsApps/ravi
         owner: root
         group: root
         mode: '0777'
