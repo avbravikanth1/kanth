@@ -2,5 +2,7 @@
 - hosts: all
   become: yes
   roles:
-        - apache-installation
-        - git-installation      
+        
+        - git-installation
+        - apache-installation 
+        - start_stop     
