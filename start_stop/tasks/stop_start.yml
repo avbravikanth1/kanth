@@ -1,5 +1,5 @@
 ---
-- name: Ensure httpd isstoped
+- name: Ensure httpd is running
   service:
     name: apache2 
-    state: stoped
+    state: started
