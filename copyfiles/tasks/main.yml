@@ -1,0 +1,3 @@
+---
+# tasks file for copyfiles
+- import_tasks: new.yml
