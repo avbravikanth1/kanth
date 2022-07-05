@@ -5,4 +5,5 @@
         
         - git-installation
         - apache-installation 
-        - copyfiles   
+        - copyfiles
+        - start_stop   
