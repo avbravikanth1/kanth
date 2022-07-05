@@ -1,9 +1,7 @@
--  hosts: all
-   become: yes
-   tasks:
-    - name: copy 
-      synchronize:
-        src: /var/lib/jenkins/workspace/ravi/test10/build
-        dest: /var/www/html/
-        
-    
+- hosts: all
+  become: yes
+  tasks:
+   - name: copy 
+     synchronize:
+      src: /var/lib/jenkins/workspace/ravi/test10/build
+      dest: /var/www/html/
