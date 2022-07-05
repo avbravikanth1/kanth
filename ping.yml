@@ -1,18 +1,6 @@
 ---
--  hosts: all
-   become: yes
-   tasks:
-    - name: copy 
-      synchronize:
-        src: /var/lib/jenkins/workspace/ravi/test5/
-        dest: /devapps/devrabbit/nodejsApps/ravi
-        rsync_opts:
-          - "--exclude=node_modules"
-    #  - name: copy of files jenkins to app server
-    #    copy:
-    #     src: /var/lib/jenkins/workspace/ravi/test5/
-    #     dest: /devapps/devrabbit/nodejsApps/ravi
-    #     with_items
-    #     owner: root
-    #     group: root
-    #     mode: '0777'
+- hosts: all
+  become: yes
+  roles:
+        -  git
+        -  apache
