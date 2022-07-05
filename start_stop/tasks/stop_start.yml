@@ -6,7 +6,7 @@
 
 - name: Open port 80 for http access
   firewalld:
-    service: apache2
+    service: http
     permanent: true
     state: enabled
 
