@@ -1,6 +1,1 @@
----
-- hosts: all
-  become: yes
-  roles:
-        - role: git
-        - role: apache
+#
