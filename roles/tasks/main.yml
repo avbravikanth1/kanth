@@ -1,2 +1,6 @@
 ---
-# tasks file for roles
+- hosts: all
+  become: yes
+  roles:
+        - role: git
+        - role: apache
