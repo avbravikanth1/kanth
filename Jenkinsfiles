@@ -30,7 +30,7 @@ pipeline {
         }
 
         stage('copy the files') {
-            step {
+            steps {
                 sh "cp /var/lib/jenkins/workspace/ravi/reactApp/ /opt/my-react-app/"
             }
         }
