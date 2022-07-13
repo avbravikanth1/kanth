@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
+        AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-aceess-key')
+    }
+
     stages {
         stage("SCM Checkout") {
             steps {
@@ -8,11 +13,11 @@ pipeline {
                     credentialsId: "raviGitAccess",            
                     url: 'https://github.com/avbravikanth1/my-react-app.git'
 
-                dir('secondRepo') {
+                //dir('secondRepo') {
                     git branch: 'main',
                     credentialsId: "raviGitAccess",
                     url: 'https://github.com/avbravikanth1/kanth.git'
-                }
+                }//
             }
         }               
         stage('Build') {
@@ -23,13 +28,16 @@ pipeline {
                
             }
         }
-        stage('status') { 
-            steps { 
+        stage('deploy') { 
+             steps { 
                 
-                ansiblePlaybook credentialsId: 'DEV_APP_SERVER', installation: 'ansible', inventory: 'secondRepo/inventories/dev.inv', limit: 'appserver', playbook: 'secondRepo/ping.yml'
+                post {
+                success {
+                    sh 'aws configure set region ap-southeast-1'
+                    sh 'aws s3 cp ./var/lib/jenkins/workspace/ravi/test10/build.jar s3:elasticbeanstalk-ap-southeast-1-236894363456.jar'
 
             }  
-        }          
+        }         
            
     }
 }
