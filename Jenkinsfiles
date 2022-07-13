@@ -39,8 +39,8 @@ pipeline {
                 // // dir('/opt/my-react-app') {
                 // //     sh "pwd"
                 // }
+             }
             }
-        }
         // stage('deploy') { 
         //      steps { 
                 
