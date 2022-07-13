@@ -36,7 +36,6 @@ pipeline {
                 sh "pwd"
                 dir('/opt/my-react-app') {
                     sh "pwd"
-                
                 }
             }
         }
