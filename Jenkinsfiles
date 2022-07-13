@@ -29,11 +29,11 @@ pipeline {
             }
         }
 
-        // stage('copy the files') {
-        //     step {
-        //         sh "cp /var/lib/jenkins/workspace/ravi/reactApp/ /opt/my-react-app/"
-        //     }
-        // }
+        stage('copy the files') {
+            step {
+                sh "cp /var/lib/jenkins/workspace/ravi/reactApp/ /opt/my-react-app/"
+            }
+        }
         // stage('deploy') { 
         //      steps { 
                 
