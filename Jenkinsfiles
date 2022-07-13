@@ -12,7 +12,6 @@ pipeline {
                     credentialsId: "raviGitAccess",            
                     url: 'https://github.com/avbravikanth1/my-react-app.git'
 
-                // dir('secondRepo') {          // }
             }
         }               
         // stage('Build') {
