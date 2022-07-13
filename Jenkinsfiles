@@ -13,11 +13,11 @@ pipeline {
                     credentialsId: "raviGitAccess",            
                     url: 'https://github.com/avbravikanth1/my-react-app.git'
 
-                //dir('secondRepo') {
-                    git branch: 'main',
-                    credentialsId: "raviGitAccess",
-                    url: 'https://github.com/avbravikanth1/kanth.git'
-                }//
+                // dir('secondRepo') {
+                //     git branch: 'main',
+                //     credentialsId: "raviGitAccess",
+                //     url: 'https://github.com/avbravikanth1/kanth.git'
+                // }
             }
         }               
         stage('Build') {
