@@ -25,7 +25,7 @@ pipeline {
 
         stage('copy the files') {
             steps {
-                sh "sudo rm -r /opt/my-react-app/*"
+                // sh "sudo rm -r /opt/my-react-app/*"
                 sh "sudo cp -r /var/lib/jenkins/workspace/ravi/reactApp/* /opt/my-react-app/"
                 sh "pwd"             
                 // // dir('/opt/my-react-app') {
