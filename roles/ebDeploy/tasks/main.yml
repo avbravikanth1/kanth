@@ -3,10 +3,10 @@
   args:
     chdir: /opt/test1/
 
-- name: eb deployment to elastic beanstalk
-  shell: eb init
-  args:
-    chdir: /opt/test1/
+# - name: eb deployment to elastic beanstalk
+#   shell: eb init
+#   args:
+#     chdir: /opt/test1/
 
 - name: eb deployment to elastic beanstalk
   shell: eb deploy
