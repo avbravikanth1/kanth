@@ -7,7 +7,7 @@ pipeline {
                 git branch: 'master',
                     credentialsId: "raviGitAccess",            
                     url: 'https://github.com/avbravikanth1/my-react-app.git'
-                dir("test_iac") {
+                dir("kanth") {
                     git branch: 'main',
                         credentialsId: 'raviGitAccess',
                         url: 'https://github.com/avbravikanth1/kanth.git'
