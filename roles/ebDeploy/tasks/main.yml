@@ -1,0 +1,4 @@
+- name: eb deployment to elastic beanstalk
+  shell: eb deploy
+  args:
+    chdir: /opt/test1/
