@@ -1,9 +1,12 @@
 pipeline {
     agent any
 
-    withCredentials([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
-    // some block
-}
+    withCredentials([[
+    $class: 'AmazonWebServicesCredentialsBinding',
+    credentialsId: "AWS-IAM-Credentials",
+    accessKeyVariable: 'jenkins-aws-secret-key-id',
+    secretKeyVariable: 'jenkins-aws-secret-aceess-key'
+]])
 
     stages {
         stage("SCM Checkout") {
