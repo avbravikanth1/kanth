@@ -1,0 +1,7 @@
+---
+- hosts: jenkinsserver
+  become: yes
+  gather_facts: false
+  
+  roles:
+    - copy
