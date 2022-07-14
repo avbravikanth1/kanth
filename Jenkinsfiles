@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    withCredentials([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
+    // some block
+}
+
     stages {
         stage("SCM Checkout") {
             steps {
@@ -29,6 +33,7 @@ pipeline {
                     inventory: 'kanth/inventories/dev.inv', 
                     limit: 'jenkinsserver', 
                     playbook: 'kanth/appDeploy.yml'
+                    
                 // sh "sudo rm -r /opt/my-react-app/*"
                 // sh "sudo cp -r /var/lib/jenkins/workspace/ravi/reactApp/* /opt/my-react-app/"
                 //sh "pwd"             
