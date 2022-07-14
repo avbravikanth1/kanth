@@ -1,0 +1,9 @@
+- name: git add all new files
+  shell: git add .
+  args:
+    chdir: /opt/test1/
+
+- name: git commit all new files
+  shell: git commit -m "modified"
+  args:
+    chdir: /opt/test1/
