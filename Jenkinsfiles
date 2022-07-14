@@ -1,32 +1,36 @@
 pipeline {
     agent any
 
-    // environment {
-    //     AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
-    //     AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-aceess-key')
-    // }
     stages {
         stage("SCM Checkout") {
             steps {
                 git branch: 'master',
                     credentialsId: "raviGitAccess",            
                     url: 'https://github.com/avbravikanth1/my-react-app.git'
-
+                dir("test_iac") {
+                    git branch: 'main',
+                        credentialsId: 'raviGitAccess',
+                        url: 'https://github.com/avbravikanth1/kanth.git'
+                }
             }
         }               
         stage('Build') {
             steps {
                 sh "npm install"
-                //sh "npm run clean"
-                sh "npm run build"
-               
+                sh "npm run build"               
             }
         }
-
         stage('copy the files') {
             steps {
-                sh "sudo rm -r /opt/my-react-app/*"
-                sh "sudo cp -r /var/lib/jenkins/workspace/ravi/reactApp/* /opt/my-react-app/"
+                ansiblePlaybook become: true, 
+                    credentialsId: 'JENKINS_APP_SERVER', 
+                    disableHostKeyChecking: true, 
+                    installation: 'ansible', 
+                    inventory: 'kanth/inventories/dev.inv', 
+                    limit: 'jenkinsserver', 
+                    playbook: 'kanth/roles/copy/tasks/main.yml'
+                // sh "sudo rm -r /opt/my-react-app/*"
+                // sh "sudo cp -r /var/lib/jenkins/workspace/ravi/reactApp/* /opt/my-react-app/"
                 //sh "pwd"             
                 // dir('/opt/my-react-app') {
                 //     sh "pwd"
