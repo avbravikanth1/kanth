@@ -4,3 +4,4 @@
         dest: /opt/my-react-app/
         rsync_opts:
             - "--exclude=node_modules"
+            - "--exclude=kanth"
