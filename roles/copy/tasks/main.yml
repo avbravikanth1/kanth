@@ -5,3 +5,5 @@
     rsync_opts:
         - "--exclude=node_modules"
         - "--exclude=kanth"
+        - "--exclude=.git"
+        - "--exclude=.gitignore"
