@@ -1,12 +1,10 @@
 pipeline {
     agent any
 
-    withCredentials([[
-    $class: 'AmazonWebServicesCredentialsBinding',
-    credentialsId: "AWS-IAM-Credentials",
-    accessKeyVariable: 'jenkins-aws-secret-key-id',
-    secretKeyVariable: 'jenkins-aws-secret-aceess-key'
-]])
+    environment {
+        AWS_ACCESS_KEY_ID     = credentials('jenkins-aws-secret-key-id')
+        AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-aceess-key')
+    }
 
     stages {
         stage("SCM Checkout") {
