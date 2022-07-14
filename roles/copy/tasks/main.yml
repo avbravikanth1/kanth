@@ -1,7 +1,6 @@
-- name: Copy build files from Jenkins to application server
-  synchronize:
-        src: /var/lib/jenkins/workspace/ravi/reactApp
-        dest: /opt/my-react-app/
-        rsync_opts:
-            - "--exclude=node_modules"
-            - "--exclude=kanth"
+synchronize:
+  src: /var/lib/jenkins/workspace/ravi/reactApp
+  dest: /opt/my-react-app/
+  rsync_opts:
+      - "--exclude=node_modules"
+      - "--exclude=kanth"
