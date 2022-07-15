@@ -1,6 +1,6 @@
 - name: eb deployment to elastic beanstalk
-  shell: cd /opt/test1 | eb list 
-  become: true
+  shell: sudo su | cd /opt/test1 | eb list 
+  
   # args:
   #   chdir: /opt/test1/
   tags:
