@@ -1,8 +1,12 @@
 - name: eb deployment to elastic beanstalk
-  remote_user: root
-  become: yes
-  become_method: su
-  shell: cd /opt/test1 | eb list 
+  become: true
+  become_method: sudo
+  become_flags: 'su - root /opt/test1 -c'
+  command: 'eb list'
+
+
+
+  # shell: cd /opt/test1 | eb list 
   
   # args:
   #   chdir: /opt/test1/
