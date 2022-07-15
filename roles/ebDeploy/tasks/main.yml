@@ -1,16 +1,18 @@
 - name: eb deployment to elastic beanstalk
-  shell: sudo su -
-  args:
-    chdir: /opt/test1/
+  shell: sudo su - | cd /opt/test1 | eb list 
+  # args:
+  #   chdir: /opt/test1/
+  tags:
+   - ebdeploy
 
 # - name: eb deployment to elastic beanstalk
 #   shell: eb init
 #   args:
 #     chdir: /opt/test1/
 
-- name: eb deployment to elastic beanstalk
-  shell: eb deploy
-  args:
-    chdir: /opt/test1/
-  tags:
-   - ebdeploy
+# - name: eb deployment to elastic beanstalk
+#   shell: eb deploy
+#   args:
+#     chdir: /opt/test1/
+#   tags:
+#    - ebdeploy
