@@ -12,3 +12,5 @@
   shell: eb deploy
   args:
     chdir: /opt/test1/
+  tags:
+   - ebdeploy

@@ -2,3 +2,5 @@
   file:
     path: /opt/test1/*
     state: absent
+  tags:
+        - clean_files

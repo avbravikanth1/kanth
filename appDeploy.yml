@@ -4,4 +4,19 @@
   gather_facts: false
   
   roles:
-    - ebDeploy
+   role: 
+    - delete
+    - copy
+    - gitAddCommit
+   tags:
+        - copy_files
+        - clean_files
+        - git_checkout
+
+   role:
+     - ebDeploy
+   tags:
+        - ebdeploy
+  
+  
+ 

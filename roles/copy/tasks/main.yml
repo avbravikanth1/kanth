@@ -7,3 +7,5 @@
         - "--exclude=kanth"
         - "--exclude=.git"
         - "--exclude=.gitignore"
+  tags:
+      - copy_files

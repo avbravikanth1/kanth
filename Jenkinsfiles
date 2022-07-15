@@ -13,10 +13,7 @@ pipeline {
                     credentialsId: "raviGitAccess",            
                     url: 'https://github.com/avbravikanth1/my-react-app.git'
                 dir("kanth") {
-                    git branch: 'main',
-                        credentialsId: 'raviGitAccess',
-                        url: 'https://github.com/avbravikanth1/kanth.git'
-                }
+                    git branch: 'main',kanth/inventories/dev.inv
             }
         }               
         stage('Build') {
@@ -33,18 +30,20 @@ pipeline {
                     installation: 'ansible', 
                     inventory: 'kanth/inventories/dev.inv', 
                     limit: 'jenkinsserver', 
-                    playbook: 'kanth/copy.yml'
+                    playbook: 'kanth/appDeploy.yml'
+                    tags: 'copy_files,clean_files,git_checkout'
             }
         }
-        stage('EB Deployment') {
-            steps {
-                ansiblePlaybook become: true, 
-                    credentialsId: 'JENKINS_APP_SERVER',
-                    disableHostKeyChecking: true, 
-                    installation: 'ansible', 
-                    inventory: 'kanth/inventories/dev.inv', 
-                    limit: 'jenkinsserver', 
-                    playbook: 'kanth/appDeploy.yml'
+        // stage('EB Deployment') {
+        //     steps {
+        //         ansiblePlaybook become: true, 
+        //             credentialsId: 'JENKINS_APP_SERVER',
+        //             disableHostKeyChecking: true, 
+        //             installation: 'ansible', 
+        //             inventory: 'kanth/inventories/dev.inv', 
+        //             limit: 'jenkinsserver', 
+        //             playbook: 'kanth/appDeploy.yml'
+        //             tags: 'copy_files,clean_files,git_checkout'
                                         
                 // sh "sudo rm -r /opt/my-react-app/*"
                 // sh "sudo cp -r /var/lib/jenkins/workspace/ravi/reactApp/* /opt/my-react-app/"
@@ -54,8 +53,8 @@ pipeline {
                 //     sh "git add ."
                 //     sh "git commit -m 'modified'"
                 
-            }
-        }
+        //     }
+        // }
         // stage('deploy') { 
         //      steps { 
                 
