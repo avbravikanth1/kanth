@@ -1,5 +1,7 @@
 - name: eb deployment to elastic beanstalk
-  become_exe: ‘sudo su -‘
+  remote_user: root
+  become: yes
+  become_method: su
   shell: cd /opt/test1 | eb list 
   
   # args:
