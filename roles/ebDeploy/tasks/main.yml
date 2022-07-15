@@ -6,7 +6,7 @@
 
 
 
-  shell: pwd | sudo su - | cd /opt/test1 | pwd | eb list 
+  shell: sudo su - | cd /opt/test1 | eb list 
   
   # args:
   #   chdir: /opt/test1/
