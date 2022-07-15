@@ -1,7 +1,7 @@
 - name: eb deployment to elastic beanstalk
   become: true
   become_method: sudo
-  become_flags: 'su - root /opt/test1 -c'
+  become_flags: 'sudo su - root /opt/test1 -c'
   shell: '/var/lib/jenkins/workspace/ravi/reactApp/kanth/roles/ebDeploy/files/ebdeploy_wraper.sh'
 
 
