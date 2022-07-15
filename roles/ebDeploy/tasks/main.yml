@@ -2,7 +2,7 @@
   become: true
   become_method: sudo
   become_flags: 'su - root /opt/test1 -c'
-  command: 'eb list'
+  command: eb list
 
 
 
