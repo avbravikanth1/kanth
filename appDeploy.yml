@@ -9,14 +9,14 @@
       - copy
       - gitAddCommit
      tags:
-        - copy_files
-        - clean_files
-        - git_checkout
+      - copy_files
+      - clean_files
+      - git_checkout
 
    - role:
-        - ebDeploy
+      - ebDeploy
      tags:
-        - ebdeploy
+      - ebdeploy
   
   
  
