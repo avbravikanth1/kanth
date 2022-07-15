@@ -13,9 +13,12 @@ pipeline {
                     credentialsId: "raviGitAccess",            
                     url: 'https://github.com/avbravikanth1/my-react-app.git'
                 dir("kanth") {
-                    git branch: 'main',kanth/inventories/dev.inv
+                    git branch: 'main',
+                    credentialsId: "raviGitAccess",
+                    url: 'https://github.com/avbravikanth1/kanth.git'
             }
-        }               
+        }  
+        }             
         stage('Build') {
             steps {
                 sh "npm install"
@@ -30,7 +33,7 @@ pipeline {
                     installation: 'ansible', 
                     inventory: 'kanth/inventories/dev.inv', 
                     limit: 'jenkinsserver', 
-                    playbook: 'kanth/appDeploy.yml'
+                    playbook: 'kanth/appDeploy.yml',
                     tags: 'copy_files,clean_files,git_checkout'
             }
         }
