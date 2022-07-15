@@ -45,7 +45,7 @@ pipeline {
                     installation: 'ansible', 
                     inventory: 'kanth/inventories/dev.inv', 
                     limit: 'jenkinsserver', 
-                    playbook: 'kanth/appDeploy.yml'
+                    playbook: 'kanth/appDeploy.yml',
                     tags: 'ebdeploy'
                                         
                 // sh "sudo rm -r /opt/my-react-app/*"
