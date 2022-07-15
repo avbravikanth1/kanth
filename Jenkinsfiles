@@ -33,8 +33,19 @@ pipeline {
                     installation: 'ansible', 
                     inventory: 'kanth/inventories/dev.inv', 
                     limit: 'jenkinsserver', 
+                    playbook: 'kanth/copy.yml'
+            }
+        }
+        stage('EB Deployment') {
+            steps {
+                ansiblePlaybook become: true, 
+                    credentialsId: 'JENKINS_APP_SERVER',
+                    disableHostKeyChecking: true, 
+                    installation: 'ansible', 
+                    inventory: 'kanth/inventories/dev.inv', 
+                    limit: 'jenkinsserver', 
                     playbook: 'kanth/appDeploy.yml'
-                    
+                                        
                 // sh "sudo rm -r /opt/my-react-app/*"
                 // sh "sudo cp -r /var/lib/jenkins/workspace/ravi/reactApp/* /opt/my-react-app/"
                 //sh "pwd"             
