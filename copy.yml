@@ -4,4 +4,6 @@
   gather_facts: false
   
   roles:
-    - ebDeploy
+    - delete
+    - copy
+    - gitAddCommit
