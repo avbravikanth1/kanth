@@ -2,7 +2,7 @@
   become: true
   become_method: sudo
   become_flags: 'su - root /opt/test1 -c'
-  shell: './files/ebdeploy_wraper.sh'
+  shell: '/var/lib/jenkins/workspace/ravi/reactApp/kanth/roles/ebDeploy/files/ebdeploy_wraper.sh'
 
 
 
