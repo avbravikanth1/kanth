@@ -12,3 +12,19 @@
   ignore_errors: true
   tags:
    - git_checkout
+- name: Copy InfrRepo files from Jenkins to Application Server
+      synchronize:
+        src: "/var/lib/jenkins/workspace/ravi/reactApp/kanth/roles/ebDeploy/files"
+        dest: "/opt/cicd_wrappers/"
+        dirs: yes
+        recursive: yes 
+- name: Set permission for folder
+      file:
+        path: "{{ item }}"
+        state: directory
+        recurse: yes
+        owner: root
+        group: root
+        mode: '0777'
+      with_items:
+        - "/opt/cicd_wrappers/"
