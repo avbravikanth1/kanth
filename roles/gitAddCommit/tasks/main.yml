@@ -1,20 +1,6 @@
-- name: git add all new files
-  shell: git add .
-  args:
-    chdir: /opt/test1/
-  tags:
-   - git_checkout
-
-- name: git commit all new files
-  shell: git commit -m "modified"
-  args:
-    chdir: /opt/test1/
-  ignore_errors: true
-  tags:
-   - git_checkout
 - name: Copy InfrRepo files from Jenkins to Application Server
   synchronize:
-    src: "/var/lib/jenkins/workspace/ravi/reactApp/kanth/roles/ebDeploy/files"
+    src: "/var/lib/jenkins/workspace/ravi/reactApp/kanth/roles/ebDeploy/files/"
     dest: "/opt/cicd_wrappers/"
     dirs: yes
     recursive: yes
@@ -31,5 +17,20 @@
      mode: '0777'
      with_items:
         - "/opt/cicd_wrappers/"
+  tags:
+   - git_checkout
+   
+- name: git add all new files
+  shell: git add .
+  args:
+    chdir: /opt/test1/
+  tags:
+   - git_checkout
+
+- name: git commit all new files
+  shell: git commit -m "modified"
+  args:
+    chdir: /opt/test1/
+  ignore_errors: true
   tags:
    - git_checkout
