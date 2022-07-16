@@ -3,11 +3,10 @@
   become_method: sudo
   become_flags: 'su - root /opt/test1 -c'
   # shell: '/opt/cicd_wrappers/files/ebdeploy_wraper.sh'
-
-
-
   shell: cd /opt/test1 | eb list 
-  
+  register: command_output
+- debug:
+    var: command_output.stdout_lines
   # args:
   #   chdir: /opt/test1/
   tags:
