@@ -2,11 +2,11 @@
   become: true
   become_method: sudo
   become_flags: 'su - root /opt/test1 -c'
-  shell: '/opt/cicd_wrappers/files/ebdeploy_wraper.sh'
+  # shell: '/opt/cicd_wrappers/files/ebdeploy_wraper.sh'
 
 
 
-  # shell: sudo su - | cd /opt/test1 | eb list 
+  shell: cd /opt/test1 | eb list 
   
   # args:
   #   chdir: /opt/test1/
