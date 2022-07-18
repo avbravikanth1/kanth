@@ -1,4 +1,4 @@
 #!/bin/bash
 sudo su - 
-cd /opt/test2
+cd /opt/test1
 eb list
