@@ -1,7 +1,7 @@
 - name: eb deployment to elastic beanstalk
-  become: true
-  become_method: sudo
-  become_flags: 'su - root /opt/test1 -c'
+  # become: true
+  # become_method: sudo
+  # become_flags: 'su - root /opt/test1 -c'
   # shell: '/opt/cicd_wrappers/files/ebdeploy_wraper.sh'
   shell: cd /opt/test1 | eb deploy 
   register: command_output
