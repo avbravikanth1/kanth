@@ -4,12 +4,15 @@
   gather_facts: false
   
   roles:
-  #  - role: delete
-  #    tags:
-  #     - clean_files
+   - role: delete
+     tags:
+      - clean_files
    - role: copy
      tags:
       - copy_files
+   - role: filepermission
+     tags:
+      - chmod_operation   
    
   #  - role: delete
   #    tags:
