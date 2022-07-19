@@ -1,13 +1,13 @@
-# - name: Move html js files from public to build directory
-#   command: mv "/opt/test1/{{ item }}" "/opt/test1/build_archive"      
-#   with_items:
-#         - "build/"
-#         - "package.json"
-#         - "package-lock.json"
-#         - "public/"
-#         - "src/"
-  # tags:
-  #  - ebdeploy
+- name: Move html js files from public to build directory
+  command: mv "/opt/test1/{{ item }}" "/opt/test1/build_archive"      
+  with_items:
+        - "build/"
+        - "package.json"
+        - "package-lock.json"
+        - "public/"
+        - "src/"
+  tags:
+   - ebdeploy
 
 - name: eb deployment to elastic beanstalk
   # become: true
@@ -22,7 +22,7 @@
   # args:
   #   chdir: /opt/test1/
   tags:
-   - ebdeploy
+   - ebdeploy/**/*
 
 # - name: eb deployment to elastic beanstalk
 #   shell: eb init
