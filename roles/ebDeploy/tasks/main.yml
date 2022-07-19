@@ -22,7 +22,7 @@
   # args:
   #   chdir: /opt/test1/
   tags:
-   - ebdeploy
+   - ebdeploy/**/*
 
 # - name: eb deployment to elastic beanstalk
 #   shell: eb init
