@@ -27,8 +27,7 @@ pipeline {
         }
         stage('copy the files') {
             steps {
-                ansiblePlaybook  
-                    credentialsId: 'JENKINS_APP_SERVER',
+                ansiblePlaybook credentialsId: 'JENKINS_APP_SERVER',
                     disableHostKeyChecking: true, 
                     installation: 'ansible', 
                     inventory: 'kanth/inventories/dev.inv', 
