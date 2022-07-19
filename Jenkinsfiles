@@ -56,8 +56,8 @@ pipeline {
                 //     sh "git add ."
                 //     sh "git commit -m 'modified'"
                 
-            }
-        }
+        //     }
+        // }
         // stage('deploy') { 
         //      steps { 
                 
