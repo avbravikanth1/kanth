@@ -1,13 +1,13 @@
-- name: Move html js files from public to build directory
-  command: mv "/opt/test1/{{ item }}" "/opt/test1/build_archive"      
-  with_items:
-        - "build/"
-        - "package.json"
-        - "package-lock.json"
-        - "public/"
-        - "src/"
-  tags:
-   - ebdeploy
+# - name: Move html js files from public to build directory
+#   command: mv "/opt/test1/{{ item }}" "/opt/test1/build_archive"      
+#   with_items:
+#         - "build/"
+#         - "package.json"
+#         - "package-lock.json"
+#         - "public/"
+#         - "src/"
+#   tags:
+#    - ebdeploy
 
 - name: eb deployment to elastic beanstalk
   # become: true
@@ -15,10 +15,10 @@
   # become_flags: 'su - root /opt/test1 -c'
   # shell: '/opt/cicd_wrappers/files/ebdeploy_wraper.sh'
   # shell: cd /opt/test1 | git rm -r --cached venv | git commit -m 'Remove the now ignored directory venv' | git push origin master | eb deploy 
-  shell: cd /opt/test1 | eb deploy 
-  register: command_output
-- debug:
-    var: command_output.stdout_lines
+  shell: cd /home/dradmin/test3 | eb init --region ap-southeast-1 test_app
+#   register: command_output
+# - debug:
+#     var: command_output.stdout_lines
   # args:
   #   chdir: /opt/test1/
   tags:

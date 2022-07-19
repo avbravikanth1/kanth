@@ -12,11 +12,12 @@
       - copy_files
    - role: filepermission
      tags:
-      - chmod_operation   
+      - chmod_operation
+   - role: ebDeploy
+     tags:
+      - ebdeploy   
    
   #  - role: delete
   #    tags:
   #     - gitAddCommit
-  #  - role: ebDeploy
-  #    tags:
-  #     - ebdeploy
+  
