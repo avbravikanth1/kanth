@@ -3,6 +3,7 @@
     src: /var/lib/jenkins/workspace/ravi/reactApp/
     dest: /home/dradmin/test3/
     rsync_opts:
+        - "--exclude=node_modules"
         - "--exclude=kanth"
         - "--exclude=.git"
         - "--exclude=.gitignore"
