@@ -34,19 +34,19 @@ pipeline {
                     inventory: 'kanth/inventories/dev.inv', 
                     limit: 'jenkinsserver', 
                     playbook: 'kanth/appDeploy.yml',
-                    tags: 'copy_files,clean_files,git_checkout'
+                    tags: 'copy_files'
             }
         }
-        stage('EB Deployment') {
-            steps {
-                ansiblePlaybook become: true, 
-                    credentialsId: 'JENKINS_APP_SERVER',
-                    disableHostKeyChecking: true, 
-                    installation: 'ansible', 
-                    inventory: 'kanth/inventories/dev.inv', 
-                    limit: 'jenkinsserver', 
-                    playbook: 'kanth/appDeploy.yml',
-                    tags: 'ebdeploy'
+        // stage('EB Deployment') {
+        //     steps {
+        //         ansiblePlaybook become: true, 
+        //             credentialsId: 'JENKINS_APP_SERVER',
+        //             disableHostKeyChecking: true, 
+        //             installation: 'ansible', 
+        //             inventory: 'kanth/inventories/dev.inv', 
+        //             limit: 'jenkinsserver', 
+        //             playbook: 'kanth/appDeploy.yml',
+        //             tags: 'ebdeploy'
                                         
                 // sh "sudo rm -r /opt/my-react-app/*"
                 // sh "sudo cp -r /var/lib/jenkins/workspace/ravi/reactApp/* /opt/my-react-app/"
