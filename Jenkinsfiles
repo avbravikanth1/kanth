@@ -34,7 +34,7 @@ pipeline {
                     inventory: 'kanth/inventories/dev.inv', 
                     limit: 'jenkinsserver', 
                     playbook: 'kanth/appDeploy.yml',
-                    tags: 'clean_files,copy_files'
+                    tags: 'copy_files'
             }
         }
         // stage('EB Deployment') {
