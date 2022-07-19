@@ -1,6 +1,6 @@
 ---
 - hosts: jenkinsserver
-  become: yes
+  # become: yes
   gather_facts: false
   
   roles:
