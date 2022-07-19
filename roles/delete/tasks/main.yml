@@ -1,6 +1,6 @@
 - name: Remove file (delete file)
   file:
-    path: /opt/test2/*
+    path: /home/dradmin/test3/*
     state: absent
   tags:
         - clean_files
