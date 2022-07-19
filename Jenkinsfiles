@@ -27,7 +27,7 @@ pipeline {
         }
         stage('copy the files') {
             steps {
-                ansiblePlaybook become: true, 
+                ansiblePlaybook  
                     credentialsId: 'JENKINS_APP_SERVER',
                     disableHostKeyChecking: true, 
                     installation: 'ansible', 
