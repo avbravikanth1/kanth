@@ -24,10 +24,10 @@
 - name: eb deployment to elastic beanstalk
   become: true
   become_method: sudo
-  become_flags: 'su - root /opt/test_app -c'
+  become_flags: 'su - root "{{ dest_dir }}" -c'
 #   # shell: '/opt/cicd_wrappers/files/ebdeploy_wraper.sh'
 #   # shell: cd /opt/test1 | git rm -r --cached venv | git commit -m 'Remove the now ignored directory venv' | git push origin master | eb deploy 
-  shell: cd /opt/test_app | eb list | eb deploy Testapp-env -l "{{ appv_output.stdout }}"
+  shell: cd "{{ dest_dir }}" | eb list | eb deploy Testapp-env -l "{{ msg }}"
 #   # register: command_output
   tags:
    - ebdeploy
