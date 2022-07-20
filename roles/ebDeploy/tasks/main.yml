@@ -17,8 +17,8 @@
   register: appv_output
   tags:
    - ebdeploy
-# - debug:
-#     var: appv_output.stdout
+- debug:
+    var: appv_output.stdout
 
 - name: eb deployment to elastic beanstalk
   become: true
