@@ -3,7 +3,7 @@
     path: /opt/test_app/.elasticbeanstalk
     owner: root
     group: root
-    mode: '1777'
+    mode: '0777'
   tags:
    - chmod_operation
 
@@ -12,6 +12,6 @@
     path: /opt/test_app/.elasticbeanstalk/config.yml
     owner: root
     group: root
-    mode: '1777'
+    mode: '0777'
    tags:
     - chmod_operation
