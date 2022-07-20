@@ -1,6 +1,6 @@
 - name: Remove file (delete file)
   file:
-    path: /opt/test_app/*
+    path: "{{ dest_dir }}"/*
     state: absent
   tags:
         - clean_files

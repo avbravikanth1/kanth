@@ -12,8 +12,8 @@
 - name: eb appversion
   become: true
   become_method: sudo
-  become_flags: 'su - root /opt/test_app -c'
-  shell: cd /opt/test_app | eb init --region ap-southeast-1 --platform Node.js test_app | eb appversion --create
+  become_flags: 'su - root "{{ dest_dir }}" -c'
+  shell: cd "{{ dest_dir }}" | eb init --region ap-southeast-1 --platform Node.js test_app | eb appversion --create
   register: appv_output
   tags:
    - ebdeploy

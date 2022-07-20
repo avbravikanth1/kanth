@@ -1,0 +1,2 @@
+src_dir: "/var/lib/jenkins/workspace/ravi/reactApp/"
+dest_dir: "/opt/test_app"
