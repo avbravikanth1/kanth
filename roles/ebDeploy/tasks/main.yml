@@ -18,7 +18,7 @@
   tags:
    - ebdeploy
 - debug:
-    msg: "{{ appv_output.stdout | regex_search('app-*')}}"
+    msg: "{{ appv_output.stdout | regex_search('app-*+'\\d{6}'')}}"
     # msg={{ appv_output.stdout_lines }}
 
 # - name: eb deployment to elastic beanstalk
