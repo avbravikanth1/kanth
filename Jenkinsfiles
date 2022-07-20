@@ -39,7 +39,7 @@ pipeline {
         }
         stage('EB Deployment') {
             steps {
-                ansiblePlaybook become: false, 
+                ansiblePlaybook become: true, 
                     credentialsId: 'JENKINS_APP_SERVER',
                     disableHostKeyChecking: true, 
                     installation: 'ansible', 
