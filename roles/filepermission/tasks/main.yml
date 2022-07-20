@@ -1,6 +1,6 @@
 - name: Give insecure permissions to an existing file
   file:
-    path: /home/dradmin/test3/.elasticbeanstalk
+    path: /opt/test_app/.elasticbeanstalk
     owner: root
     group: root
     mode: '1777'
@@ -9,7 +9,7 @@
 
 -  name: Give insecure permissions to an existing file
    file:
-    path: /home/dradmin/test3/.elasticbeanstalk/config.yml
+    path: /opt/test_app/.elasticbeanstalk/config.yml
     owner: root
     group: root
     mode: '1777'

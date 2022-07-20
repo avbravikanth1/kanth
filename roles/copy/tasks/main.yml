@@ -1,7 +1,7 @@
 - name: copy 
   synchronize:
     src: /var/lib/jenkins/workspace/ravi/reactApp/
-    dest: /home/dradmin/test3/
+    dest: /opt/test_app
     rsync_opts:
         - "--exclude=node_modules"
         - "--exclude=kanth"
