@@ -39,7 +39,8 @@ pipeline {
         }
         stage('EB Deployment') {
             steps {
-                ansiblePlaybook credentialsId: 'JENKINS_APP_SERVER',
+                ansiblePlaybook become: false, 
+                    credentialsId: 'JENKINS_APP_SERVER',
                     disableHostKeyChecking: true, 
                     installation: 'ansible', 
                     inventory: 'kanth/inventories/dev.inv', 
