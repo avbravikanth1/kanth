@@ -27,11 +27,11 @@
   # shell: '/opt/cicd_wrappers/files/ebdeploy_wraper.sh'
   # shell: cd /opt/test1 | git rm -r --cached venv | git commit -m 'Remove the now ignored directory venv' | git push origin master | eb deploy 
   shell: "cd /opt/test_app | eb init --region ap-southeast-1 --platform Node.js test_app | eb list | eb deploy Testapp-env -l {{ appv_output.stdout }}"
-  register: command_output
+  # register: command_output
   tags:
    - ebdeploy
-- debug:
-    var: command_output.stdout_lines
+# - debug:
+#     var: command_output.stdout_lines
   # args:
   #  chdir: /home/dradmin/test3
   tags:
