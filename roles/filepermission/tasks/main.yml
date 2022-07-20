@@ -1,6 +1,6 @@
 - name: Give insecure permissions to an existing file
   file:
-    path: "{{ dest_dir }}"/.elasticbeanstalk
+    path: "{{ dest_dir }}/.elasticbeanstalk"
     owner: root
     group: root
     mode: '0777'
@@ -9,7 +9,7 @@
 
 -  name: Give insecure permissions to an existing file
    file:
-    path: "{{ dest_dir }}"/.elasticbeanstalk/config.yml
+    path: "{{ dest_dir }}/.elasticbeanstalk/config.yml"
     owner: root
     group: root
     mode: '0777'
