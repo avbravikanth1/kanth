@@ -18,7 +18,8 @@
   tags:
    - ebdeploy
 - debug:
-    msg={{ appv_output.stdout_lines }}
+    msg: "{{ myvar.appv_output.stdout | regex_search('\\d{6}')}}"
+    # msg={{ appv_output.stdout_lines }}
 
 # - name: eb deployment to elastic beanstalk
 #   become: true
