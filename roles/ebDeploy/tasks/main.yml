@@ -34,8 +34,8 @@
 #     var: command_output.stdout_lines
   # args:
   #  chdir: /home/dradmin/test3
-  tags:
-   - ebdeploy
+  # tags:
+  #  - ebdeploy
 
 # - name: eb deployment to elastic beanstalk
 #   shell: eb init
