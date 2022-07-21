@@ -15,11 +15,10 @@
   become_flags: 'su - root "{{ dest_dir }}" -c'
   shell: cd "{{ dest_dir }}" | eb init --region ap-southeast-1 --platform Node.js test_app | eb appversion --create
   register: appv_output
-  set_facts: 
-      ver_no: "{{ appv_output.stdout | regex_search('app-\\d{6}_\\d{12}')}}"
   tags:
    - ebdeploy
-
+  set_fact: 
+      ver_no: "{{ appv_output.stdout | regex_search('app-\\d{6}_\\d{12}')}}"
 - debug:
       var: ver_no
     # msg: "{{ appv_output.stdout | regex_search('app-\\d{6}_\\d{12}')}}"
