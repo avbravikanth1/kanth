@@ -13,7 +13,7 @@
       - copy_files
 - name: infra files copy 
   synchronize:
-    src: "{{ infra_src_dir }}/*"
+    src: "{{ infra_src_dir }}"
     dest: "{{ infra_dst_dir }}"
     
   tags:
