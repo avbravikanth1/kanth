@@ -30,10 +30,9 @@
   # register: command_output
   tags:
    - ebdeploy
-- set_fact: 
-    ver_no: "{{ appv_output.stdout }}"
+# - set_fact: 
+#     ver_no: "{{ appv_output.stdout }}"
 - debug:
-    var: ver_no
     var: command_output.stdout_lines
   # args:
   #  chdir: /home/dradmin/test3
