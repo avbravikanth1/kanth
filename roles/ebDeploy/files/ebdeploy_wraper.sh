@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /opt/test_app | eb list
+cd /opt/test_app | eb deploy
 
 # cd /opt/test_app | eb init --region ap-southeast-1 eb_test #--platform Node.js 16 eb_test | eb deploy Ebtest-env
 # cd /opt/test_app | printf '\n\n\n\n\n' | eb init eb_test --region ap-southeast-1 | eb deploy --verbose -l Ebtest-env
