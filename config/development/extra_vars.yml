@@ -1,4 +1,4 @@
 src_dir: "/var/lib/jenkins/workspace/ravi/reactApp/"
 dest_dir: "/opt/test_app"
 infra_src_dir: "/var/lib/jenkins/workspace/ravi/reactApp/kanth/roles/ebDeploy/files"
-infra_dst_dir: "/opt/cicd_wrappers/"
+infra_dst_dir: "/opt/cicd_wrappers"
