@@ -17,7 +17,6 @@
   become: yes
   become_flags: 'su - root "{{ dest_dir }}" -c'
   shell: "{{ infra_dst_dir }}/files/ebdeploy_wraper.sh"
-  register: appv_output
 # - debug:
 #       var: ver_no
     # msg: "{{ appv_output.stdout | regex_search('app-\\d{6}_\\d{12}')}}"
@@ -32,8 +31,8 @@
    - ebdeploy
 # - set_fact: 
 #     ver_no: "{{ appv_output.stdout }}"
-- debug:
-    var: command_output.stdout_lines
+# - debug:
+#     var: command_output.stdout_lines
   # args:
   #  chdir: /home/dradmin/test3
   # tags:
