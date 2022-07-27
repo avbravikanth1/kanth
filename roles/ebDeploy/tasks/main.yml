@@ -1,14 +1,3 @@
-# - name: Move html js files from public to build directory
-#   command: mv "/opt/test1/{{ item }}" "/opt/test1/build_archive"      
-#   with_items:
-#         - "build/"
-#         - "package.json"
-#         - "package-lock.json"
-#         - "public/"
-#         - "src/"
-#   tags:
-#    - ebdeploy
-
 # - name: eb appversion
 #   become: true
 #   become_method: sudo
@@ -26,7 +15,6 @@
 
 - name: eb deployment to elastic beanstalk
   become: yes
-  # become_method: sudo
   become_flags: 'su - root "{{ dest_dir }}" -c'
   shell: "{{ infra_dst_dir }}/files/ebdeploy_wraper.sh"
   register: appv_output
@@ -43,11 +31,10 @@
   tags:
    - ebdeploy
 - set_fact: 
-      ver_no: "{{ appv_output.stdout }}"
+    ver_no: "{{ appv_output.stdout }}"
 - debug:
     var: ver_no
-    #var: command_output.stdout_lines
-  msg: "{{ appv_output.stdout_lines }}"
+    var: command_output.stdout_lines
   # args:
   #  chdir: /home/dradmin/test3
   # tags:
