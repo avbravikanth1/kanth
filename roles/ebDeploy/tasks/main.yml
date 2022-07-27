@@ -47,7 +47,7 @@
 - debug:
     var: ver_no
     #var: command_output.stdout_lines
-  msg={{ appv_output.stdout_lines }}
+  msg: "{{ appv_output.stdout_lines }}"
   # args:
   #  chdir: /home/dradmin/test3
   # tags:
