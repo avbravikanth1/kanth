@@ -29,6 +29,7 @@
   # become_method: sudo
   become_flags: 'su - root "{{ dest_dir }}" -c'
   shell: "{{ infra_dst_dir }}/files/ebdeploy_wraper.sh"
+  register: appv_output
 - set_fact: 
       ver_no: "{{ appv_output.stdout }}"
 # - debug:
