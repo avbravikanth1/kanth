@@ -28,7 +28,7 @@
   become: yes
   # become_method: sudo
   become_flags: 'su - root "{{ dest_dir }}" -c'
-  shell: '"{{ infra_dst_dir }}"/ebdeploy_wraper.sh'
+  shell: "{{ infra_dst_dir }}/ebdeploy_wraper.sh"
 #   # shell: cd /opt/test1 | git rm -r --cached venv | git commit -m 'Remove the now ignored directory venv' | git push origin master | eb deploy 
   # shell: cd "{{ dest_dir }}" | eb deploy Ebtest-env -l "{{ ver_no }}"
   # shell: eb deploy Testapp-env -l "{{ ver_no }}"
