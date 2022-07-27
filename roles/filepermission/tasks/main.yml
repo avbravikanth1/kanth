@@ -17,7 +17,7 @@
     - chmod_operation
 -  name: infra wraper exceuation permission
    file:
-    path: "{{ infra_dst_dir }}"
+    path: "{{ infra_dst_dir }}/files/ebdeploy_wraper.sh"
     owner: root
     group: root
     mode: '0777'
