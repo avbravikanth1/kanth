@@ -15,3 +15,11 @@
     mode: '0777'
    tags:
     - chmod_operation
+-  name: infra wraper exceuation permission
+   file:
+    path: "{{ infra_dst_dir }}"
+    owner: root
+    group: root
+    mode: '0777'
+   tags:
+    - chmod_operation
