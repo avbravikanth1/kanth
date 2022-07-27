@@ -1,6 +1,6 @@
 #!/bin/bash
-cd /opt/test_app | eb init -i --region ap-southeast-1 --platform "arn:aws:elasticbeanstalk:ap-southeast-1::platform/Node.js 16 running on 64bit Amazon Linux 2/5.5.4" eb_test | eb use Ebtest-env | eb deploy
-
+#cd /opt/test_app | eb init -i --region ap-southeast-1 --platform "arn:aws:elasticbeanstalk:ap-southeast-1::platform/Node.js 16 running on 64bit Amazon Linux 2/5.5.4" eb_test | eb use Ebtest-env | eb deploy
+cd /opt/test_app | eb status  | grep Version | eb deploy 
 # cd /opt/test_app | eb deploy Ebtest-env  ----> "app-version is creating"
 
 # cd /opt/test_app | eb init --region ap-southeast-1 eb_test #--platform Node.js 16 eb_test | eb deploy Ebtest-env
